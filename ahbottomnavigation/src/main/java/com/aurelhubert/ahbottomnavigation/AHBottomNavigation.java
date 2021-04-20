@@ -67,7 +67,7 @@ public class AHBottomNavigation extends FrameLayout {
 	private static String TAG = "AHBottomNavigation";
     private static final String EXCEPTION_INDEX_OUT_OF_BOUNDS = "The position (%d) is out of bounds of the items (%d elements)";
 	private static final int MIN_ITEMS = 3;
-	private static final int MAX_ITEMS = 5;
+	private static final int MAX_ITEMS = 6;
 
 	// Listener
 	private OnTabSelectedListener tabSelectedListener;
