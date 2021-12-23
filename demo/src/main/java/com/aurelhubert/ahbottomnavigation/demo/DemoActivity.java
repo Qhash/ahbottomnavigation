@@ -87,6 +87,7 @@ public class DemoActivity extends AppCompatActivity {
 		bottomNavigation.manageFloatingActionButtonBehavior(floatingActionButton);
 		bottomNavigation.setTranslucentNavigationEnabled(true);
 		bottomNavigation.setUseBoldTitle(true);
+		bottomNavigation.setNotificationBackground(ContextCompat.getDrawable(this, R.drawable.bg_tab_notification));
 
 		bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
 			@Override
