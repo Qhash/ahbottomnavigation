@@ -209,9 +209,9 @@ public class DemoActivity extends AppCompatActivity {
 			public void run() {
 				// Setting custom colors for notification
 				AHNotification notification = new AHNotification.Builder()
-						.setText(":)")
-						.setBackgroundColor(ContextCompat.getColor(DemoActivity.this, R.color.color_notification_back))
-						.setTextColor(ContextCompat.getColor(DemoActivity.this, R.color.color_notification_text))
+						.setText("1")
+						//.setBackgroundColor(ContextCompat.getColor(DemoActivity.this, R.color.color_notification_back))
+						//.setTextColor(ContextCompat.getColor(DemoActivity.this, R.color.color_notification_text))
 						.build();
 				bottomNavigation.setNotification(notification, 1);
 				Snackbar.make(bottomNavigation, "Snackbar with bottom navigation",

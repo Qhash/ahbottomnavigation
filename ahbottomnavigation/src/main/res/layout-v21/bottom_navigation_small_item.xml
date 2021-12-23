@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@+id/bottom_navigation_small_container"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation_small_container"
     android:layout_width="match_parent"
     android:layout_height="@dimen/bottom_navigation_height"
     android:background="@drawable/item_background"
@@ -12,8 +12,8 @@
         android:layout_width="@dimen/bottom_navigation_icon"
         android:layout_height="@dimen/bottom_navigation_icon"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
         android:layout_marginTop="@dimen/bottom_navigation_small_margin_top"
+        android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
         android:gravity="center" />
 
     <TextView
@@ -21,8 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
         android:layout_marginTop="@dimen/bottom_navigation_small_margin_top"
+        android:layout_marginBottom="@dimen/bottom_navigation_margin_bottom"
         android:alpha="1"
         android:gravity="center"
         android:lines="1"
@@ -45,8 +45,10 @@
         android:paddingRight="@dimen/bottom_navigation_notification_padding"
         android:textColor="#FFFFFF"
         android:textSize="@dimen/bottom_navigation_notification_text_size"
-        android:textStyle="normal" />
+        android:textStyle="normal"
+        tools:alpha="1"
+        tools:text="1" />
 
-   <!-- android:layout_marginLeft="@dimen/bottom_navigation_notification_margin_left"
-    android:layout_marginTop="@dimen/bottom_navigation_notification_margin_top"-->
+    <!-- android:layout_marginLeft="@dimen/bottom_navigation_notification_margin_left"
+     android:layout_marginTop="@dimen/bottom_navigation_notification_margin_top"-->
 </FrameLayout>

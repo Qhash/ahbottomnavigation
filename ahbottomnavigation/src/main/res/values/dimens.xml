@@ -34,9 +34,9 @@
     <!-- Notifications -->
     <dimen name="bottom_navigation_notification_width">20dp</dimen>
     <dimen name="bottom_navigation_notification_height">20dp</dimen>
-    <dimen name="bottom_navigation_notification_radius">8dp</dimen>
+    <dimen name="bottom_navigation_notification_radius">10dp</dimen>
     <dimen name="bottom_navigation_notification_elevation">1dp</dimen>
-    <dimen name="bottom_navigation_notification_padding">3dp</dimen>
+    <dimen name="bottom_navigation_notification_padding">1dp</dimen>
     <dimen name="bottom_navigation_notification_margin_top_classic">4dp</dimen>
     <dimen name="bottom_navigation_notification_margin_left">16dp</dimen>
     <dimen name="bottom_navigation_notification_margin_left_active">16dp</dimen>
