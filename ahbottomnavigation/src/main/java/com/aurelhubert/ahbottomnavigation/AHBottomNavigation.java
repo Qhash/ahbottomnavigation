@@ -946,7 +946,7 @@ public class AHBottomNavigation extends FrameLayout {
 				if (notificationTypeface != null) {
 					notification.setTypeface(notificationTypeface);
 				} else {
-					notification.setTypeface(null, Typeface.BOLD);
+					notification.setTypeface(null, Typeface.NORMAL);
 				}
 
 				if (notificationBackgroundDrawable != null) {
