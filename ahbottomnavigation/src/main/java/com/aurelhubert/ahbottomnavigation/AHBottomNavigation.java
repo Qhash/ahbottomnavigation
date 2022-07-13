@@ -475,7 +475,7 @@ public class AHBottomNavigation extends FrameLayout {
 				view.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						updateItems(itemIndex, true);
+						updateItems(itemIndex, true, true);
 					}
 				});
 				iconDrawable = forceTint ? AHHelper.getTintDrawable(items.get(i).getDrawable(context),
@@ -611,7 +611,7 @@ public class AHBottomNavigation extends FrameLayout {
 				view.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						updateSmallItems(itemIndex, true);
+						updateSmallItems(itemIndex, true, true);
 					}
 				});
 				view.setSoundEffectsEnabled(soundEffectsEnabled);
@@ -649,17 +649,17 @@ public class AHBottomNavigation extends FrameLayout {
 	 * @param itemIndex   int: Selected item position
 	 * @param useCallback boolean: Use or not the callback
 	 */
-	private void updateItems(final int itemIndex, boolean useCallback) {
+	private void updateItems(final int itemIndex, boolean useCallback, boolean isUserClick) {
 
 		if (currentItem == itemIndex) {
 			if (tabSelectedListener != null && useCallback) {
-				tabSelectedListener.onTabSelected(itemIndex, true);
+				tabSelectedListener.onTabSelected(itemIndex, true, isUserClick);
 			}
 			return;
 		}
 
 		if (tabSelectedListener != null && useCallback) {
-			boolean selectionAllowed = tabSelectedListener.onTabSelected(itemIndex, false);
+			boolean selectionAllowed = tabSelectedListener.onTabSelected(itemIndex, false, isUserClick);
 			if (!selectionAllowed) return;
 		}
 
@@ -786,17 +786,17 @@ public class AHBottomNavigation extends FrameLayout {
 	 * @param itemIndex   int: Selected item position
 	 * @param useCallback boolean: Use or not the callback
 	 */
-	private void updateSmallItems(final int itemIndex, boolean useCallback) {
+	private void updateSmallItems(final int itemIndex, boolean useCallback, boolean isUserClick) {
 
 		if (currentItem == itemIndex) {
 			if (tabSelectedListener != null && useCallback) {
-				tabSelectedListener.onTabSelected(itemIndex, true);
+				tabSelectedListener.onTabSelected(itemIndex, true, isUserClick);
 			}
 			return;
 		}
 
 		if (tabSelectedListener != null && useCallback) {
-			boolean selectionAllowed = tabSelectedListener.onTabSelected(itemIndex, false);
+			boolean selectionAllowed = tabSelectedListener.onTabSelected(itemIndex, false, isUserClick);
 			if (!selectionAllowed) return;
 		}
 
@@ -1260,9 +1260,9 @@ public class AHBottomNavigation extends FrameLayout {
 		if (titleState != TitleState.ALWAYS_HIDE &&
 				titleState != TitleState.SHOW_WHEN_ACTIVE_FORCE &&
 				(items.size() == MIN_ITEMS || titleState == TitleState.ALWAYS_SHOW)) {
-			updateItems(position, useCallback);
+			updateItems(position, useCallback, false);
 		} else {
-			updateSmallItems(position, useCallback);
+			updateSmallItems(position, useCallback, false);
 		}
 	}
 
@@ -1678,7 +1678,7 @@ public class AHBottomNavigation extends FrameLayout {
 		 * @param wasSelected boolean: true if the tab was already selected
 		 * @return boolean: true for updating the tab UI, false otherwise
 		 */
-		boolean onTabSelected(int position, boolean wasSelected);
+		boolean onTabSelected(int position, boolean wasSelected, boolean isUserClick);
 	}
 
 	public interface OnNavigationPositionListener {

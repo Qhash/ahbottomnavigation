@@ -90,8 +90,9 @@ public class DemoActivity extends AppCompatActivity {
 		bottomNavigation.setNotificationBackground(ContextCompat.getDrawable(this, R.drawable.bg_tab_notification));
 
 		bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
+
 			@Override
-			public boolean onTabSelected(int position, boolean wasSelected) {
+			public boolean onTabSelected(int position, boolean wasSelected, boolean isUserClick) {
 
 				if (currentFragment == null) {
 					currentFragment = adapter.getCurrentFragment();
@@ -189,7 +190,7 @@ public class DemoActivity extends AppCompatActivity {
 				return true;
 			}
 		});
-		
+
 		/*
 		bottomNavigation.setOnNavigationPositionListener(new AHBottomNavigation.OnNavigationPositionListener() {
 			@Override public void onPositionChange(int y) {
